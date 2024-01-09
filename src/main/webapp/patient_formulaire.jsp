@@ -2,8 +2,9 @@
 formulaire de création de fiche patient
  renvoie un message de validation
 --%>
-
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@include file="header.jsp"%>
+
 <html>
 <head>
     <title>Nouveau patient</title>
@@ -36,5 +37,11 @@ formulaire de création de fiche patient
     <input id="btn-valider" type="submit">
 
 </form>
+<p>
+<%-- TODO récupérer valeur nom --%>
+<c:set var="nom" value="nom"/>
+<c:out value="nom"/>
+</p>
+
 </body>
 </html>
