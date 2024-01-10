@@ -12,14 +12,7 @@ page d'accueil
 <body>
 <h1><%= "Accueil" %></h1>
 
-<%--test jstl--%>
-<p>
-<c:set var="message" value="test tags" scope="request"/>
-<c:out value="message" />
-</p>
-
-<br/>
 <%--Menu--%>
-<a href="patients_vue_principale.jsp">Patients</a>
+<a href="clients_vue_principale.jsp">Clients</a>
 </body>
 </html>

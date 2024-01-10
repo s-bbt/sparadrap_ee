@@ -1,4 +1,4 @@
-package fr.pompey.cda22045.sparadrap_ee;
+package fr.pompey.cda22045.sparadrap_ee.servlets;
 
 import java.io.*;
 

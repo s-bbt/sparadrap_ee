@@ -1,24 +1,24 @@
 <%--
-page principale PATIENTS
+page principale CLIENTS
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@include file="header.jsp" %>
 
 <html>
 <head>
-    <title>Patients</title>
+    <title>Clients</title>
 </head>
 <body>
-<h1>Patients</h1>
-<%--lien pour fenêtre pop-up "nouveau patient"--%>
-<a href="patient_formulaire.jsp">Nouveau patient</a>
+<h1>Clients</h1>
+<%--lien pour fenêtre pop-up "nouveau client"--%>
+<a href="client_formulaire.jsp">Nouveau client</a>
 
 <%--champs de recherche--%>
-<div class="container" id="section-recherche-patient">
+<div class="container" id="section-recherche-client">
     <div class="row">
         <div class="col-md-7" style="--bs-body-bg-rgb:blue-100">
-            <h2>Rechercher un patient</h2>
-            <form action="patient_formulaire.jsp" method="post">
+            <h2>Rechercher un client</h2>
+            <form action="client_formulaire.jsp" method="post">
 
                 <label for="nom">Nom</label>
                 <input type="text" id="nom" name="nom" required>
