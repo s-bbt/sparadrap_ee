@@ -26,6 +26,7 @@ page principale CLIENTS
                 <label for="prenom">Prénom</label>
                 <input type="text" id="prenom" name="prenom" required>
 
+<%--                TODO pattern à modifier : voir client formulaire--%>
                 <label for="num-secu">Numéro de sécurité sociale</label>
                 <input type="text" name="num-secu" id="num-secu"
                        pattern="[1-2]{1}[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{3}[0-9]{3}[0-9]{2}">

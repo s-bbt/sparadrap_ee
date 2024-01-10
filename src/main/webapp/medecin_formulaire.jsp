@@ -1,18 +1,19 @@
 <%--
-formulaire de création de fiche client
+formulaire de création de fiche médecin(
+ TODO renvoie un message de validation
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@include file="header.jsp"%>
 
 <html>
 <head>
-    <title>Nouveau client</title>
+    <title>Nouveau médecin</title>
 </head>
 <body>
-<h1>Nouveau client</h1>
+<h1>Nouveau médecin</h1>
 
 <%--Formulaire--%>
-<form action="client_formulaire.jsp" method="post">
+<form action="medecin_formulaire.jsp" method="post">
 
     <label for="nom">Nom</label>
     <input type="text" id="nom" name="nom" required>
@@ -20,10 +21,11 @@ formulaire de création de fiche client
     <label for="prenom">Prénom</label>
     <input type="text" id="prenom" name="prenom" required>
 
-    <label for="date_naissance">Date de naissance</label>
-    <input type="date" id="date_naissance" name="date_naissance">
+    <label for="specialite">Spécialité</label>
+    <input type="checkbox" id="specialite" name="specialite" required>
 
-    <label for="num_secu">Numéro de sécurité sociale</label>
+<%--    TODO pattern à adapter --%>
+    <label for="num_secu">Numéro d'agrément'</label>
     <input type="text" name="num_secu" id="num_secu" pattern="[1-2]{1}[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{3}[0-9]{3}[0-9]{2}">
 
     <label for="telephone">Téléphone</label>
@@ -40,6 +42,7 @@ formulaire de création de fiche client
 </form>
 
 <%--Récupération et affichage des données --%>
+<%--    TODO à adapter --%>
 <p><c:set var="vnom" value="${param.nom}" scope="page"/>
     <c:out value="${vnom}"/>
 
@@ -61,9 +64,6 @@ formulaire de création de fiche client
     <c:set var="vadresse" value="${param.adresse}" scope="page"/>
     <c:out value="${vadresse}"/>
 </p>
-
-<%--    TODO ajouter regex dans bean ?
-    TODO passer par bean --%>
 
 </body>
 </html>
