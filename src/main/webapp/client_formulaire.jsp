@@ -1,8 +1,9 @@
 <%--
 formulaire de création de fiche client
 --%>
+
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@include file="header.jsp"%>
+<%@include file="header.jsp" %>
 
 <html>
 <head>
@@ -31,9 +32,15 @@ formulaire de création de fiche client
 
     <label for="email">Email</label>
     <input type="email" id="email" name="email">
+    <br>
+    <label for="ville">Ville</label>
+    <input type="text" id="ville" name="ville" inputmode="text">
 
-    <label for="adresse">Adresse</label>
-    <input type="text" id="adresse" name="adresse">
+    <label for="rue">Rue (numéro et nom de la voie)</label>
+    <input type="text" id="rue" name="ville">
+
+    <label for="code_postal">Code postal</label>
+    <input type="number" id="code_postal" name="code_postal" inputmode="numeric" minlength="3" maxlength="5">
 
     <input id="btn-valider" type="submit">
 
@@ -58,12 +65,17 @@ formulaire de création de fiche client
     <c:set var="vemail" value="${param.email}" scope="page"/>
     <c:out value="${vemail}"/>
 
-    <c:set var="vadresse" value="${param.adresse}" scope="page"/>
-    <c:out value="${vadresse}"/>
+    <c:set var="vrue" value="${param.rue}" scope="page"/>
+    <c:out value="${vrue}"/>
+
+    <c:set var="vville" value="${param.ville}" scope="page"/>
+    <c:out value="${vville}"/>
+
+    <c:set var="vcode_postal" value="${param.code_postal}" scope="page"/>
+    <c:out value="${vcode_postal}"/>
 </p>
 
-<%--    TODO ajouter regex dans bean ?
-    TODO passer par bean --%>
+<%--    TODO passer par bean--%>
 
 </body>
 </html>

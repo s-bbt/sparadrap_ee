@@ -1,6 +1,7 @@
 <%--
 page principale CLIENTS
 --%>
+
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@include file="header.jsp" %>
 
@@ -18,7 +19,7 @@ page principale CLIENTS
     <div class="row">
         <div class="col-md-7" style="--bs-body-bg-rgb:blue-100">
             <h2>Rechercher un client</h2>
-            <form action="client_formulaire.jsp" method="post">
+            <form action="clients_vue_principale.jsp" method="post">
 
                 <label for="nom">Nom</label>
                 <input type="text" id="nom" name="nom" required>
@@ -26,10 +27,8 @@ page principale CLIENTS
                 <label for="prenom">Prénom</label>
                 <input type="text" id="prenom" name="prenom" required>
 
-<%--                TODO pattern à modifier : voir client formulaire--%>
-                <label for="num-secu">Numéro de sécurité sociale</label>
-                <input type="text" name="num-secu" id="num-secu"
-                       pattern="[1-2]{1}[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{3}[0-9]{3}[0-9]{2}">
+                <label for="num_secu">Numéro de sécurité sociale</label>
+                <input type="text" name="num_secu" id="num_secu" pattern="[1-2]{1}[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{3}[0-9]{3}[0-9]{2}">
 
                 <label for="telephone">Téléphone</label>
                 <input type="tel" id="telephone" name="telephone"
