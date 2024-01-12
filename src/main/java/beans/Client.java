@@ -19,6 +19,11 @@ public class Client {
         this.setClient_adresse(client_adresse);
     }
 
+//    pour test ClientDAO
+    public Client(String clientNom, String clientPrenom) {
+        this.setClient_prenom(client_prenom);
+    }
+
     //    TODO méthode pour récupérer les champs (déplacer de servlet à bean)
     public void enregistrerClient(HttpServletRequest request) {
         String nom = request.getParameter("nom");
