@@ -1,6 +1,6 @@
 **Sparadrap : la revanche en JavaEE**
 
-Application web de vente pour les pharmacies, avec gestions des stocks de médicaments, comptes clients, historique d'achets, etc.
+Application web de vente pour les pharmacies, avec gestions des stocks de médicaments, comptes clients, historique d'achats, etc.
 
 Projet de mise en pratiques des technologies vues en formation :
 
