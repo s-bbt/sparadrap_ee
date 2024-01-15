@@ -17,6 +17,12 @@ _Technos_
 - DAO
 - Bootstrap
 
+Logiciels
+- IntelliJ
+- PowerDesigner
+- MySQL Workbench
+- Wireflow
+
 _Maquette : pages principales_
 
 ![Sparadrap wireframe v1](https://github.com/starmnuch/sparadrap_ee/assets/141212145/3714a79b-cfc1-4491-92ff-c18ebdedf412)
