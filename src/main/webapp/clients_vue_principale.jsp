@@ -41,5 +41,9 @@ page principale CLIENTS
     </div>
 </div>
 
+<div class="row" id="resultat-rech-client">
+<%--TODO resultats de la recherche--%>
+</div>
+
 </body>
 </html>

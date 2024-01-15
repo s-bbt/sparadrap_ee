@@ -1,11 +1,22 @@
 package dao;
 
 import java.sql.Connection;
+import java.util.List;
 
-public class DAO {
+public abstract class DAO<T> {
 
-    Connection connect = singletonDAO.getInstanceDB();
+    protected Connection connect = singletonDAO.getInstanceDB();
 
-// TODO CRUD
+    public abstract boolean create (T obj);
+    // créer un objet
+
+    public abstract List<T> find();
+    // retourne les objets recherchés sous forme de liste
+
+    public abstract boolean update (T obj);
+    // modifier un objet
+
+    public abstract boolean delete (T obj);
+    // supprimer un objet
 
 }

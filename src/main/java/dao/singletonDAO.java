@@ -29,7 +29,6 @@ public class singletonDAO {
             Class.forName(props.getProperty("jdbc.driver"));
             connection = DriverManager.getConnection(props.getProperty("jdbc.url"), props);
         } catch (SQLException | ClassNotFoundException | IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
