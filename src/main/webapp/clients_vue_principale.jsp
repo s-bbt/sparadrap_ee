@@ -43,6 +43,12 @@ page principale CLIENTS
 
 <div class="row" id="resultat-rech-client">
 <%--TODO resultats de la recherche--%>
+    <ul>
+        <c:forEach var="client" items="${clientsList}">
+            <li>${client.nom} ${client.prenom}</li>
+        </c:forEach>
+    </ul>
+
 </div>
 
 </body>

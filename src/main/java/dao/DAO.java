@@ -10,8 +10,11 @@ public abstract class DAO<T> {
     public abstract boolean create (T obj);
     // créer un objet
 
-    public abstract List<T> find();
+    public abstract List<T> findAll();
     // retourne les objets recherchés sous forme de liste
+
+    public abstract T find();
+    // retourne les objets recherchés
 
     public abstract boolean update (T obj);
     // modifier un objet

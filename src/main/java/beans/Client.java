@@ -1,7 +1,5 @@
 package beans;
 
-import jakarta.servlet.http.HttpServletRequest;
-
 public class Client {
     private String client_nom;
     private String client_prenom;
@@ -20,16 +18,9 @@ public class Client {
     }
 
 //    pour test ClientDAO
-    public Client(String clientNom, String clientPrenom) {
+    public Client(String client_nom, String client_prenom) {
         this.setClient_prenom(client_prenom);
-    }
-
-    //    TODO méthode pour récupérer les champs (déplacer de servlet à bean)
-    public void enregistrerClient(HttpServletRequest request) {
-        String nom = request.getParameter("nom");
-        String prenom = request.getParameter("prenom");
-        request.setAttribute("nom", nom);
-        request.setAttribute("prenom", prenom);
+        this.setClient_nom(client_nom);
     }
 
     public String getClient_nom() {

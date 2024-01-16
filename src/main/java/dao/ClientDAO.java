@@ -5,6 +5,8 @@ import beans.Client;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ClientDAO extends DAO<Object> {
@@ -17,23 +19,28 @@ public class ClientDAO extends DAO<Object> {
     }
 
     @Override
-    public List<Object> find() {
+    public List<Object> findAll() {
         StringBuilder requeteClient = new StringBuilder();
         requeteClient.append("SELECT ? ");
         requeteClient.append("from CLIENT ;");
 
-        Client clientsRes = null;
+        List<Client> clientsRes = new ArrayList<Client>();
         try (PreparedStatement ps = this.connect.prepareStatement(requeteClient.toString())) {
-            String c = "*";
-            ps.setString(1, "%" + c + "%");
+//            String c = "*";
+//            ps.setString(1, "%" + c + "%");
             ResultSet resSet = ps.executeQuery();
             while (resSet.next()) {
-                clientsRes = (new Client(resSet.getString("client_nom"), resSet.getString("client_prenom")));
+                clientsRes.add(new Client(resSet.getString("client_nom"), resSet.getString("client_prenom")));
             }
         } catch (SQLException sqlE) {
             System.out.println("Relation with DB error : " + sqlE.getMessage() + "SQL error code : " + sqlE.getSQLState());
         }
-        return (List) clientsRes;
+        return Collections.singletonList(clientsRes);
+    }
+
+    @Override
+    public Object find() {
+        return null;
     }
 
     @Override
