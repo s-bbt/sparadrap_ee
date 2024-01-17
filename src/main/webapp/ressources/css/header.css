@@ -1,0 +1,9 @@
+#logo {
+    width: 50px; /* Vous pouvez définir la largeur souhaitée */
+    height: auto; /* Cela permet de conserver le ratio hauteur/largeur de l'image */
+}
+
+h1 {
+    font-family: "montserrat", sans-serif;
+    font-size: xxx-large;
+}
