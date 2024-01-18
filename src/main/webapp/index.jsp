@@ -14,7 +14,7 @@ page d'accueil
 <h1><%= "Accueil" %></h1>
 
 <%--Menu--%>
-<a href="clients_vue_principale.jsp">Clients</a>
+<a href="ClientRechercheSt">Clients</a>
 <a href="medecin_vue_principale.jsp">Médecins</a>
 </body>
 </html>

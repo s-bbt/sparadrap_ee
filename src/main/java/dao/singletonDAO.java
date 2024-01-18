@@ -9,7 +9,7 @@ import java.util.Properties;
 
 public class singletonDAO {
 
-    private static final String PATHCONF = "/src/main/webapp/WEB-INF/dao.properties";
+    private static final String PATHCONF = "C:\\Users\\User-11\\IdeaProjects\\Sparadrap_ee\\src\\main\\webapp\\WEB-INF\\META-INF\\dao.properties";
     private static final Properties props = new Properties();
     private static Connection connection;
 

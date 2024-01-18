@@ -4,6 +4,7 @@ page principale CLIENTS
 
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@include file="header.jsp" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 
 <html>
 <head>
@@ -42,14 +43,14 @@ page principale CLIENTS
 </div>
 
 <div class="row" id="resultat-rech-client">
-<%--TODO resultats de la recherche--%>
+<%--TODO resultats de la recherche : faire tableau--%>
     <ul>
+        <jsp:useBean id="clientsList" scope="request" type="java.util.ArrayList<beans.Client>"/>
         <c:forEach var="client" items="${clientsList}">
-            <li>${client.nom} ${client.prenom}</li>
+            <li><c:out value="${client.client_nom }" /></li>
         </c:forEach>
     </ul>
 
 </div>
-
 </body>
 </html>

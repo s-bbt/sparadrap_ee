@@ -14,7 +14,7 @@ formulaire de création de fiche client
 
 <%--Formulaire--%>
 <div id="div_formulaire">
-    <form action="client_formulaire.jsp" method="post">
+    <form action="ClientFormulaireSt" method="post" id="nouveau_client">
 
         <div id="div_nom_prenom">
             <label for="nom">Nom</label>
@@ -63,36 +63,8 @@ formulaire de création de fiche client
     </form>
 </div>
 
-<%--Récupération et affichage des données --%>
-<p><c:set var="vnom" value="${param.nom}" scope="page"/>
-    <c:out value="${vnom}"/>
+<%--TODO message de confirmation--%>
 
-    <c:set var="vprenom" value="${param.prenom}" scope="page"/>
-    <c:out value="${vprenom}"/>
-
-    <c:set var="vdate" value="${param.date_naissance}" scope="page"/>
-    <c:out value="${vdate}"/>
-
-    <c:set var="vnum_secu" value="${param.num_secu}" scope="page"/>
-    <c:out value="${vnum_secu}"/>
-
-    <c:set var="vtelephone" value="${param.telephone}" scope="page"/>
-    <c:out value="${vtelephone}"/>
-
-    <c:set var="vemail" value="${param.email}" scope="page"/>
-    <c:out value="${vemail}"/>
-
-    <c:set var="vrue" value="${param.rue}" scope="page"/>
-    <c:out value="${vrue}"/>
-
-    <c:set var="vville" value="${param.ville}" scope="page"/>
-    <c:out value="${vville}"/>
-
-    <c:set var="vcode_postal" value="${param.code_postal}" scope="page"/>
-    <c:out value="${vcode_postal}"/>
-</p>
-
-<%--    TODO passer par bean--%>
 
 </body>
 </html>
