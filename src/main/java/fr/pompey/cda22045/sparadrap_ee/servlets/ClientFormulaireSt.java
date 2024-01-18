@@ -25,13 +25,11 @@ public class ClientFormulaireSt extends HttpServlet {
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-
         String nom = request.getParameter("nom");
         String prenom = request.getParameter("prenom");
         Client nv_client = new Client(nom, prenom);
         clientDAO.create(nv_client);
         request.setAttribute("confirmationMessage", "Le client a été enregistré avec succès.");
-
     }
 
 }

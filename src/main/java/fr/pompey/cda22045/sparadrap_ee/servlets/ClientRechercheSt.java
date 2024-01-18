@@ -28,13 +28,14 @@ public class ClientRechercheSt extends HttpServlet {
         this.getServletContext().getRequestDispatcher("/clients_vue_principale.jsp").forward(request, response);
     }
 
-    // TODO DoPost pour récupérer les champs
-//    public void doGet(HttpServletRequest request) {
-//        String nom = request.getParameter("nom");
-//        String prenom = request.getParameter("prenom");
-//        request.setAttribute("nom", nom);
-//        request.setAttribute("prenom", prenom);
-//    }
+    // TODO DoPost pour récupérer les champs formulaire de recherche et renvoyer détail du client dans jsp client_details
+    public void doGet(HttpServletRequest request) {
+    String nom = request.getParameter("nom");
+    String prenom = request.getParameter("prenom");
+    Client client_details = new Client(nom, prenom);
+        clientDAO.create(client_details);
+        request.setAttribute("confirmationMessage", "Le client a été enregistré avec succès.");
+   }
 
 }
 

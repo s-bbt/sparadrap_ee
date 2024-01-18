@@ -6,8 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class ClientDAO extends DAO<Client> {
 //  TODO connexion
@@ -53,6 +51,7 @@ public class ClientDAO extends DAO<Client> {
         return null;
     }
 
+//    TODO
     @Override
     public boolean update(Client obj) {
         return false;

@@ -18,7 +18,7 @@ page principale CLIENTS
 <%--champs de recherche--%>
 <div class="container" id="section-recherche-client">
     <div class="row">
-        <div class="col-md-7" style="--bs-body-bg-rgb:blue-100">
+        <div class="col-md-7" >
             <h2>Rechercher un client</h2>
             <form action="clients_vue_principale.jsp" method="post">
 
@@ -47,7 +47,7 @@ page principale CLIENTS
     <ul>
         <jsp:useBean id="clientsList" scope="request" type="java.util.ArrayList<beans.Client>"/>
         <c:forEach var="client" items="${clientsList}">
-            <li><c:out value="${client.client_nom }" /></li>
+            <li><c:out value="${client.client_nom } ${client.client_prenom}" /></li>
         </c:forEach>
     </ul>
 
