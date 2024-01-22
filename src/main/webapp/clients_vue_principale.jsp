@@ -20,7 +20,7 @@ page principale CLIENTS
     <div class="row">
         <div class="col-md-7" >
             <h2>Rechercher un client</h2>
-            <form action="clients_vue_principale.jsp" method="post">
+            <form action="testResClient.jsp" method="post">
 
                 <label for="nom">Nom</label>
                 <input type="text" id="nom" name="nom" required>
@@ -44,12 +44,12 @@ page principale CLIENTS
 
 <div class="row" id="resultat-rech-client">
 <%--TODO resultats de la recherche : faire tableau--%>
-    <ul>
-        <jsp:useBean id="clientsList" scope="request" type="java.util.ArrayList<beans.Client>"/>
-        <c:forEach var="client" items="${clientsList}">
-            <li><c:out value="${client.client_nom } ${client.client_prenom}" /></li>
-        </c:forEach>
-    </ul>
+<%--    <ul>--%>
+<%--        <jsp:useBean id="clientsList" scope="request" class="java.util.ArrayList"/>--%>
+<%--        <c:forEach var="client" items="${clientsList}">--%>
+<%--            <li><c:out value="${client.client_nom }"/> <c:out value="{client.client_prenom}"/></li>--%>
+<%--        </c:forEach>--%>
+<%--    </ul>--%>
 
 </div>
 </body>

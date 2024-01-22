@@ -26,16 +26,19 @@ public class ClientDAO extends DAO<Client> {
         return false;
     }
 
-    @Override
-    public ArrayList<Client> findAll() {
+
+    public ArrayList<Client> findAll(String nom, String prenom) {
+
         StringBuilder requeteClient = new StringBuilder();
         requeteClient.append("SELECT * ");
-        requeteClient.append("from CLIENT;");
+        requeteClient.append("FROM CLIENT ");
+        requeteClient.append(" WHERE CLIENT_PRENOM LIKE ? ");
+        requeteClient.append(" AND CLIENT_NOM LIKE ?;");
 
         ArrayList<Client> clientsRes = new ArrayList<>();
         try (PreparedStatement ps = this.connect.prepareStatement(requeteClient.toString())) {
-//            String c = "*";
-//            ps.setString(1, "%" + c + "%");
+            ps.setString(1, "%" + nom + "%");
+            ps.setString(2, "%" + prenom + "%");
             ResultSet resSet = ps.executeQuery();
             while (resSet.next()) {
                 clientsRes.add(new Client(resSet.getString("client_nom"), resSet.getString("client_prenom")));
@@ -51,7 +54,7 @@ public class ClientDAO extends DAO<Client> {
         return null;
     }
 
-//    TODO
+    //    TODO
     @Override
     public boolean update(Client obj) {
         return false;
