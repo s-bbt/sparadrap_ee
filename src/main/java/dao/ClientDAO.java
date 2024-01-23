@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ClientDAO extends DAO<Client> {
 //  TODO connexion
@@ -26,19 +27,39 @@ public class ClientDAO extends DAO<Client> {
         return false;
     }
 
+    @Override
+    public List<Client> findAll() {
+        StringBuilder requeteClient = new StringBuilder();
+        requeteClient.append("SELECT * ");
+        requeteClient.append("from CLIENT;");
 
-    public ArrayList<Client> findAll(String nom, String prenom) {
+        ArrayList<Client> clientsRes = new ArrayList<>();
+        try (PreparedStatement ps = this.connect.prepareStatement(requeteClient.toString())) {
+//            String c = "*";
+//            ps.setString(1, "%" + c + "%");
+            ResultSet resSet = ps.executeQuery();
+            while (resSet.next()) {
+                clientsRes.add(new Client(resSet.getString("client_nom"), resSet.getString("client_prenom")));
+            }
+        } catch (SQLException sqlE) {
+            System.out.println("Relation with DB error : " + sqlE.getMessage() + "SQL error code : " + sqlE.getSQLState());
+        }
+        return clientsRes;
+    }
+
+    @Override
+    public List<Client> findByParam(String nom, String prenom) {
 
         StringBuilder requeteClient = new StringBuilder();
         requeteClient.append("SELECT * ");
-        requeteClient.append("FROM CLIENT ");
+        requeteClient.append("FROM CLIENT");
         requeteClient.append(" WHERE CLIENT_PRENOM LIKE ? ");
-        requeteClient.append(" AND CLIENT_NOM LIKE ?;");
+      requeteClient.append(" AND CLIENT_NOM LIKE ?;");
 
         ArrayList<Client> clientsRes = new ArrayList<>();
         try (PreparedStatement ps = this.connect.prepareStatement(requeteClient.toString())) {
             ps.setString(1, "%" + nom + "%");
-            ps.setString(2, "%" + prenom + "%");
+           ps.setString(2, "%" + prenom + "%");
             ResultSet resSet = ps.executeQuery();
             while (resSet.next()) {
                 clientsRes.add(new Client(resSet.getString("client_nom"), resSet.getString("client_prenom")));

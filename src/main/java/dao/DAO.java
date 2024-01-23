@@ -10,8 +10,10 @@ public abstract class DAO<T> {
     public abstract boolean create (T obj);
     // créer un objet
 
-//    public abstract List<T> findAll();
-    // retourne les objets recherchés sous forme de liste
+    public abstract List<T> findAll();
+//     retourne les objets recherchés sous forme de liste
+
+    public abstract List<T> findByParam(String param1, String param2);
 
     public abstract T find();
     // retourne les objets recherchés

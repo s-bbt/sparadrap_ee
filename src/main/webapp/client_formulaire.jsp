@@ -9,7 +9,7 @@ formulaire de création de fiche client
 <head>
     <title>Nouveau client</title>
 </head>
-<body>
+<body class="m-2">
 <h1>Nouveau client</h1>
 
 <%--Formulaire--%>
