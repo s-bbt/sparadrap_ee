@@ -58,8 +58,8 @@ public class ClientDAO extends DAO<Client> {
 
         ArrayList<Client> clientsRes = new ArrayList<>();
         try (PreparedStatement ps = this.connect.prepareStatement(requeteClient.toString())) {
-            ps.setString(1, "%" + nom + "%");
-           ps.setString(2, "%" + prenom + "%");
+            ps.setString(1, "%" + prenom + "%");
+            ps.setString(2, "%" + nom + "%");
             ResultSet resSet = ps.executeQuery();
             while (resSet.next()) {
                 clientsRes.add(new Client(resSet.getString("client_nom"), resSet.getString("client_prenom")));

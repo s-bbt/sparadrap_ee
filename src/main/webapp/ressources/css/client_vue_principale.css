@@ -1,0 +1,12 @@
+#btn-rech-client {
+    border-radius: 8px;
+    color: cornflowerblue;
+    border-color: cornflowerblue;
+    text-align: center;
+
+}
+
+#btn-rech-client:hover {
+    background-color: cornflowerblue;
+    color: floralwhite;
+}

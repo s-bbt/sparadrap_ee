@@ -7,22 +7,17 @@
     <title>Résultat de la recherche</title>
 </head>
 <body>
-<h1>Résultat de la recherche</h1>
 
-<ul>
+<div class="card bg-light mb-8" style="width: 200px">
+    <div class="card-header">Résultat de la recherche</div>
+    <ul class="list-group list-group-flush">
     <jsp:useBean id="clientsList" scope="request" type="java.util.List"/>
     <c:forEach var="client" items="${clientsList}">
-        <li>${client.client_nom} ${client.client_prenom}</li>
+        <li class="list-group-item">${client.client_nom} ${client.client_prenom}</li>
         <%--            <li><c:out value="${client.client_nom }" /></li>--%>
     </c:forEach>
 </ul>
-
-<%--<ul>--%>
-<%--    &lt;%&ndash;@elvariable id="clientsList" type="java.util.List"&ndash;%&gt;--%>
-<%--    <c:forEach var="client" items="${ clientsList }">--%>
-<%--        <li>${client.nom} ${client.prenom}</li>--%>
-<%--    </c:forEach>--%>
-<%--</ul>--%>
+</div>
 
 </body>
 </html>
