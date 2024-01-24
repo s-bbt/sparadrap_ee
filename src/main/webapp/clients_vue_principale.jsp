@@ -52,7 +52,7 @@ page principale CLIENTS
 
 <%-- afficher le résultat de la recherche client --%>
 <c:if test="${not empty param}">
-    <div class="card bg-light mb-8" style="width: 200px">
+    <div class="card bg-light mb-10" style="width: 200px">
         <div class="card-header">Résultat de la recherche</div>
         <ul class="list-group list-group-flush">
             <jsp:useBean id="clientsList" scope="request" type="java.util.List"/>

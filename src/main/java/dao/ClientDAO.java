@@ -10,7 +10,6 @@ import java.util.List;
 
 public class ClientDAO extends DAO<Client> {
 //  TODO connexion
-//  TODO create + delete + update
 
     @Override
     public boolean create(Client obj) {
@@ -70,12 +69,13 @@ public class ClientDAO extends DAO<Client> {
         return clientsRes;
     }
 
+    //    TODO pour cliquer sur le client
     @Override
     public Client find() {
         return null;
     }
 
-    //    TODO
+//    TODO pour valider modif client
     @Override
     public boolean update(Client obj) {
         return false;
