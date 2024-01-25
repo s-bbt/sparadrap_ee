@@ -7,6 +7,7 @@ public class Client {
     private String client_mail;
     private String client_tel;
     private String client_adresse;
+    private int client_id;
 
     public Client(String client_nom, String client_prenom, int client_num_secu, String client_mail, String client_tel, String client_adresse) {
         this.setClient_nom(client_nom);
@@ -18,6 +19,12 @@ public class Client {
     }
 
 //    pour test ClientDAO
+    public Client(String client_nom, String client_prenom, int client_id) {
+        this.setClient_prenom(client_prenom);
+        this.setClient_nom(client_nom);
+        this.setClient_id(client_id);
+    }
+
     public Client(String client_nom, String client_prenom) {
         this.setClient_prenom(client_prenom);
         this.setClient_nom(client_nom);
@@ -28,6 +35,9 @@ public class Client {
     }
 
     public void setClient_nom(String client_nom) {
+        if (client_nom == null || client_nom.isEmpty()) {
+            throw new IllegalArgumentException("Le nom ne peut pas être vide");
+        }
         this.client_nom = client_nom;
     }
 
@@ -36,7 +46,18 @@ public class Client {
     }
 
     public void setClient_prenom(String client_prenom) {
+        if (client_prenom == null || client_prenom.isEmpty()) {
+            throw new IllegalArgumentException("Le prénom ne peut pas être vide");
+        }
         this.client_prenom = client_prenom;
+    }
+
+    public int getClient_id() {
+        return client_id;
+    }
+
+    public void setClient_id(int client_id) {
+        this.client_id = client_id;
     }
 
     public int getClient_num_secu() {

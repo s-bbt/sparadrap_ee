@@ -15,7 +15,7 @@ public abstract class DAO<T> {
 
     public abstract List<T> findByParam(String param1, String param2);
 
-    public abstract T find();
+    public abstract T find(int param);
     // retourne les objets recherchés
 
     public abstract boolean update (T obj);

@@ -52,12 +52,17 @@ page principale CLIENTS
 
 <%-- afficher le résultat de la recherche client --%>
 <c:if test="${not empty param}">
-    <div class="card bg-light mb-10" style="width: 200px">
+    <div class="card bg-light mb-10" style="width: 300px">
         <div class="card-header">Résultat de la recherche</div>
         <ul class="list-group list-group-flush">
             <jsp:useBean id="clientsList" scope="request" type="java.util.List"/>
             <c:forEach var="client" items="${clientsList}">
-                <li class="list-group-item">${client.client_nom} ${client.client_prenom}</li>
+                <li class="list-group-item">
+                    <div style="display: flex; justify-content: space-between; align-items: center">
+                            ${client.client_nom} ${client.client_prenom}
+<%--                        <a href="ClientDetailsSt" class="btn btn-light">Détails</a>--%>
+                    </div>
+                </li>
             </c:forEach>
         </ul>
     </div>

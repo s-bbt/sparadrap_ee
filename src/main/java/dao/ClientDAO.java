@@ -38,7 +38,7 @@ public class ClientDAO extends DAO<Client> {
 //            ps.setString(1, "%" + c + "%");
             ResultSet resSet = ps.executeQuery();
             while (resSet.next()) {
-                clientsRes.add(new Client(resSet.getString("client_nom"), resSet.getString("client_prenom")));
+                clientsRes.add(new Client(resSet.getString("client_nom"), resSet.getString("client_prenom"), resSet.getInt("client_id")));
             }
         } catch (SQLException sqlE) {
             System.out.println("Relation with DB error : " + sqlE.getMessage() + "SQL error code : " + sqlE.getSQLState());
@@ -61,7 +61,7 @@ public class ClientDAO extends DAO<Client> {
             ps.setString(2, "%" + nom + "%");
             ResultSet resSet = ps.executeQuery();
             while (resSet.next()) {
-                clientsRes.add(new Client(resSet.getString("client_nom"), resSet.getString("client_prenom")));
+                clientsRes.add(new Client(resSet.getString("client_nom"), resSet.getString("client_prenom"), resSet.getInt("client_id")));
             }
         } catch (SQLException sqlE) {
             System.out.println("Relation with DB error : " + sqlE.getMessage() + "SQL error code : " + sqlE.getSQLState());
@@ -69,11 +69,22 @@ public class ClientDAO extends DAO<Client> {
         return clientsRes;
     }
 
-    //    TODO pour cliquer sur le client
     @Override
-    public Client find() {
-        return null;
+    public Client find(int client_id) {
+        StringBuilder requeteClient = new StringBuilder();
+        requeteClient.append("Select * from client ");
+        requeteClient.append("where client_id = ?;");
+        Client clientDetails = null;
+        try (PreparedStatement ps = this.connect.prepareStatement(requeteClient.toString())) {
+            ps.setInt(1, client_id);
+            ResultSet resSet = ps.executeQuery();
+            clientDetails = new Client(resSet.getString("client_nom"), resSet.getString("client_prenom"), resSet.getInt("client_id"));
+        } catch (SQLException sqlE) {
+            System.out.println("Relation with DB error : " + sqlE.getMessage() + "SQL error code : " + sqlE.getSQLState());
+        }
+        return clientDetails;
     }
+
 
 //    TODO pour valider modif client
     @Override
