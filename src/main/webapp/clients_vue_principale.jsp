@@ -41,12 +41,14 @@ page principale CLIENTS
                     <input type="tel" id="telephone" name="telephone"
                            pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}">
                 </div>
-
+            </div>
+            </div>
                 <%--bouton--%>
                 <input type="submit" id="btn-rech-client">
 
     </form>
 </div>
+
 
 <%--TODO lien cliquable vers détails clients--%>
 
@@ -60,9 +62,14 @@ page principale CLIENTS
                 <li class="list-group-item">
                     <div style="display: flex; justify-content: space-between; align-items: center">
                             ${client.client_nom} ${client.client_prenom}
-<%--                        <a href="ClientDetailsSt" class="btn btn-light">Détails</a>--%>
+                                <form action="ClientDetailsSt" method="post">
+                                    <input type="hidden" name="id" value="${client.client_id}">
+                                    <button type="submit" class="btn btn-light">Détails</button>
+                                </form>
                     </div>
                 </li>
+
+<%----%>
             </c:forEach>
         </ul>
     </div>
