@@ -12,17 +12,21 @@ header
 <header>
 
     <%--    logo --%>
-    <div class="row align-self-start flex-nowrap align-items-center">
-        <div class="col">
-            <img src="ressources/img/bandage.png" alt="logo Sparadrap" id="logo">
-        </div>
-        <h1 id="sparadrap-logo">Sparadrap</h1>
-    </div>
+<%--    <div class="row align-self-start flex-nowrap align-items-center">--%>
+<%--        <div class="col">--%>
+<%--            <img src="ressources/img/bandage.png" alt="logo Sparadrap" id="logo">--%>
+<%--        </div>--%>
+<%--        <h1 id="sparadrap-logo">Sparadrap</h1>--%>
+<%--    </div>--%>
 
     <%--Menu--%>
     <nav class="navbar">
         <div class="container-fluid">
-            <ul class="navbar-nav mr-auto">
+            <div class="navbar-header">
+                <img src="ressources/img/bandage.png" alt="logo Sparadrap" id="logo">
+                <a class="navbar-brand" id="sparadrap-logo" href="accueil.jsp">Sparadrap</a>
+            </div>
+            <ul class="nav navbar-nav flex-row">
                 <li class="nav-item active">
                     <a class="nav-link" href="accueil.jsp">Accueil</a>
                 </li>

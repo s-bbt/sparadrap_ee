@@ -78,7 +78,9 @@ public class ClientDAO extends DAO<Client> {
         try (PreparedStatement ps = this.connect.prepareStatement(requeteClient.toString())) {
             ps.setInt(1, client_id);
             ResultSet resSet = ps.executeQuery();
-            clientDetails = new Client(resSet.getString("client_nom"), resSet.getString("client_prenom"), resSet.getInt("client_id"));
+            if (resSet.next()) {
+                clientDetails = new Client(resSet.getString("client_nom"), resSet.getString("client_prenom"), resSet.getInt("client_id"));
+            }
         } catch (SQLException sqlE) {
             System.out.println("Relation with DB error : " + sqlE.getMessage() + "SQL error code : " + sqlE.getSQLState());
         }

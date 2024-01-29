@@ -22,4 +22,6 @@
     color: floralwhite;
 }
 
-
+.navbar-nav {
+float: left;
+}
