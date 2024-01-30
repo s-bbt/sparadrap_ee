@@ -22,6 +22,12 @@
     color: floralwhite;
 }
 
-.navbar-nav {
-float: left;
+/*.navbar-nav {*/
+/*float: left;*/
+/*}*/
+
+.navbar-nav li {
+    margin-right: 10px;
+    border-radius: 5px;
+    padding: 5px;
 }
