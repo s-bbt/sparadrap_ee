@@ -59,21 +59,26 @@ page principale CLIENTS
             <c:if test="${not empty param}">
                 <div class="card bg-light mb-10" style="width: 300px">
                     <div class="card-header">Résultat de la recherche</div>
+
                     <ul class="list-group list-group-flush">
                         <jsp:useBean id="clientsList" scope="request" type="java.util.List"/>
                         <c:forEach var="client" items="${clientsList}">
-                            <li class="list-group-item">
-                                <div style="display: flex; justify-content: space-between; align-items: center">
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col">
                                         ${client.client_nom} ${client.client_prenom}
+                                </div>
+                                <div class="col text-end">
                                     <form action="ClientDetailsSt" method="post">
                                         <input type="hidden" name="id" value="${client.client_id}">
-                                        <button type="submit" class="btn btn-light">Détails</button>
+                                        <button type="submit" id="btn-details" class="btn btn-outline-secondary btn-sm">
+                                            Détails
+                                        </button>
                                     </form>
                                 </div>
-                            </li>
-
-                            <%----%>
-                        </c:forEach>
+                            </div>
+                            </c:forEach>
+                        </li>
                     </ul>
                 </div>
             </c:if>

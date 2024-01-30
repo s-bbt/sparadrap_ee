@@ -13,9 +13,10 @@ page d'accueil
 </head>
 
 <body class="m-2">
+<div class="border border-primary-subtle rounded-2 m-2 p-4">
 <h1><%= "Accueil" %>
 </h1>
-
+</div>
 
 
 </body>
