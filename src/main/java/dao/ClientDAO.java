@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClientDAO extends DAO<Client> {
-//  TODO connexion
 
     @Override
     public boolean create(Client obj) {

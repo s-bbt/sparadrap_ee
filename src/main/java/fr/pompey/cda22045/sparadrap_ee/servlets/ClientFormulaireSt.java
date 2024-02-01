@@ -29,8 +29,9 @@ public class ClientFormulaireSt extends HttpServlet {
         String prenom = request.getParameter("prenom");
         Client nv_client = new Client(nom, prenom);
         clientDAO.create(nv_client);
-// todo message de confirmation
-        request.setAttribute("confirmationMessage", "Le client a été enregistré avec succès.");
+// todo message de confirmation -> alert boostrap
+        request.setAttribute("message", "Nouveau client ajouté avec succès.");
+        request.getRequestDispatcher("/client_formulaire.jsp").forward(request, response);
     }
 
 }

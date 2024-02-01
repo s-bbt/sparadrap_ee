@@ -20,7 +20,6 @@ public class ClientDetailsSt extends HttpServlet {
         this.clientDAO = new ClientDAO();
     }
 
-    //    TODO methode pour afficher détails client
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 //        récupérer id du client
         int client_id = Integer.parseInt(request.getParameter("id"));
@@ -32,6 +31,6 @@ public class ClientDetailsSt extends HttpServlet {
     }
 
 
-    // TODO méthode doPost pour modification des infos client : tester avec "nono" (DAP : update)
+    // TODO méthode doPost pour modification des infos client : tester avec "nono" (DAO : update)
 
 }

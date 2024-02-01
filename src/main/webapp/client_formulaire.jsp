@@ -95,9 +95,17 @@ formulaire de création de fiche client
         </div>
     </div>
 
-    <%--TODO message de confirmation--%>
-
-
 </div>
+
+<%-- message de confirmation--%>
+<div>
+    <c:if test="${not empty requestScope.message}">
+        <div class="alert alert-success d-flex alert-dismissible fade show align-items-center" role="alert">
+                ${requestScope.message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </c:if>
+</div>
+
 </body>
 </html>
