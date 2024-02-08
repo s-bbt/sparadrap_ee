@@ -95,6 +95,15 @@ public class ClientDAO extends DAO<Client> {
 
     @Override
     public boolean delete(Client obj) {
+        StringBuilder requeteClient = new StringBuilder();
+        requeteClient.append("DELETE FROM CLIENT ");
+        requeteClient.append("WHERE CLIENT_ID = ? ;");
+        try (PreparedStatement ps = this.connect.prepareStatement(requeteClient.toString())) {
+            ps.setInt(1, obj.getClient_id());
+            ps.executeUpdate();
+        } catch (SQLException sqlE) {
+            System.out.println("Relation with DB error : " + sqlE.getMessage() + "SQL error code : " + sqlE.getSQLState());
+        }
         return false;
     }
 }

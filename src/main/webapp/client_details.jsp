@@ -19,25 +19,26 @@
             <table class="table-sm">
                 <tr>
                     <th scope="row">Nom</th>
-                    <td>${client.client_nom}</td>
+                    <td id="champ-nom">${client.client_nom}</td>
                 </tr>
                 <tr>
                     <th scope="row">Prénom</th>
-                    <td>${client.client_prenom}</td>
+                    <td id="champ-prenom">${client.client_prenom}</td>
                 </tr>
-
             </table>
         </div>
     </div>
     </div>
 
 <%--    TODO ajouter bouton modifier et supprimer le client --%>
-    <div class="col-2 d-grid gap-2">
-        <button class="btn btn-outline-primary">Modifier le client</button>
-        <button class="btn btn-outline-danger">Supprimer le client</button>
+    <div class="col-2 d-grid gap-2" id="div-boutons">
+        <button class="btn btn-outline-primary" id="btn-modifier">Modifier le client</button>
     </div>
 </div>
 
 </div>
+
+<script type="text/javascript" src="ressources/script/script.js"></script>
+
 </body>
 </html>

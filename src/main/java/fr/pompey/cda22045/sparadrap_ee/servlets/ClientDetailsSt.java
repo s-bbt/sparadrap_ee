@@ -32,5 +32,7 @@ public class ClientDetailsSt extends HttpServlet {
 
 
     // TODO méthode doPost pour modification des infos client : tester avec "nono" (DAO : update)
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
+    }
 }
