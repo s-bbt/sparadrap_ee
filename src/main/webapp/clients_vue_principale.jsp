@@ -53,7 +53,6 @@ page principale CLIENTS
             </form>
         </div>
 
-        <%--TODO lien cliquable vers détails clients--%>
         <div class="col-md-6">
             <%-- Carte d'affichage : résultat de la recherche client --%>
             <c:if test="${not empty param}">

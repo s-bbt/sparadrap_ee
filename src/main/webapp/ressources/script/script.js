@@ -30,9 +30,20 @@ function modifierBoutons() {
     let btnSupprimer = document.createElement("button");
     btnSupprimer.innerHTML = "Supprimer le client";
     btnSupprimer.classList.add("btn", "btn-outline-danger");
+    btnSupprimer.id = "btn-suppr";
+
+        btnSupprimer.addEventListener("click", function () {
+            let formulaire = document.createElement("form");
+            formulaire.method = "post";
+            formulaire.action = "ClientModifSt";
+
+            // TODO ajouter client id (erreur : id null)
+
+            document.body.appendChild(formulaire);
+            formulaire.submit();
+        })
 
     divBoutons.appendChild(btnValider);
     divBoutons.appendChild(btnAnnuler);
     divBoutons.appendChild(btnSupprimer);
 }
-

@@ -21,7 +21,7 @@ public abstract class DAO<T> {
     public abstract boolean update (T obj);
     // modifier un objet
 
-    public abstract boolean delete (T obj);
+    public abstract void delete (T obj);
     // supprimer un objet
 
 }

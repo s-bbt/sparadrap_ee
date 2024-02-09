@@ -25,12 +25,12 @@
                     <th scope="row">Prénom</th>
                     <td id="champ-prenom">${client.client_prenom}</td>
                 </tr>
+                <input type="hidden" id="client_id" name="client_id" value="${client.client_id}" />
             </table>
         </div>
     </div>
     </div>
 
-<%--    TODO ajouter bouton modifier et supprimer le client --%>
     <div class="col-2 d-grid gap-2" id="div-boutons">
         <button class="btn btn-outline-primary" id="btn-modifier">Modifier le client</button>
     </div>

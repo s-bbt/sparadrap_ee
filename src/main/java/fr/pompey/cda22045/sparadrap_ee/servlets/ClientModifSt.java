@@ -10,8 +10,8 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet (name = "ClientDetailsSt", value = "/ClientDetailsSt")
-public class ClientDetailsSt extends HttpServlet {
+@WebServlet (name = "ClientModifSt", value = "/ClientModifSt")
+public class ClientModifSt extends HttpServlet {
 
     private ClientDAO clientDAO;
 
@@ -20,14 +20,12 @@ public class ClientDetailsSt extends HttpServlet {
         this.clientDAO = new ClientDAO();
     }
 
+//    TODO méthode suppression client + ajouter pop up : suppression effectuée ou non
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-//        récupérer id du client
-        int client_id = Integer.parseInt(request.getParameter("id"));
-//        DAO
+        int client_id = Integer.parseInt(request.getParameter("client_id"));
         Client client = clientDAO.find(client_id);
-//      set détails du client
-        request.setAttribute("client", client);
-        this.getServletContext().getRequestDispatcher("/client_details.jsp").forward(request, response);
+        clientDAO.delete(client);
+        this.getServletContext().getRequestDispatcher("/ClientAccueilSt").forward(request, response);
     }
 
 }
