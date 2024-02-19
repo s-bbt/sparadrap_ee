@@ -24,6 +24,7 @@ public class ClientModifSt extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         int client_id = Integer.parseInt(request.getParameter("client_id"));
         Client client = clientDAO.find(client_id);
+        request.setAttribute("client", client);
         clientDAO.delete(client);
         this.getServletContext().getRequestDispatcher("/ClientAccueilSt").forward(request, response);
     }

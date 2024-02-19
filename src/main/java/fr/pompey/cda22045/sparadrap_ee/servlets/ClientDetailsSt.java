@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
+// affiche les informations détaillées du client cliqué + transmet l'id du client dans un champ caché
 @WebServlet (name = "ClientDetailsSt", value = "/ClientDetailsSt")
 public class ClientDetailsSt extends HttpServlet {
 

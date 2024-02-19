@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
+// affiche la fenêtre de recherche des clients et le bouton "nouveau client"
 @WebServlet (name = "ClientAccueilSt", value = "/ClientAccueilSt")
 public class ClientAccueilSt extends HttpServlet {
 
@@ -20,8 +21,6 @@ public class ClientAccueilSt extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-//        ArrayList<Client> clients = (ArrayList<Client>) clientDAO.findAll();
-//        request.setAttribute("clientsList", clients);
         this.getServletContext().getRequestDispatcher("/clients_vue_principale.jsp").forward(request, response);
     }
 

@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
+// servlet pour afficher les clients dont le nom et prénom correspondent au formulaire
 @WebServlet(name = "ClientRechercheSt" , value = "/ClientRechercheSt")
 public class ClientRechercheSt extends HttpServlet {
 
