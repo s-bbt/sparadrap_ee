@@ -28,6 +28,7 @@ public class ClientModifSt extends HttpServlet {
         if (client!=null) {
             clientDAO.delete(client);
         }
+        request.setAttribute("message", "Suppression effectuée");
         this.getServletContext().getRequestDispatcher("/ClientRechercheSt").forward(request, response);
     }
 
