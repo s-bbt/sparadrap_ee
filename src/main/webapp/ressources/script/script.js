@@ -38,31 +38,22 @@ function modifierBoutons() {
     let btnSupprimer = document.createElement("button");
     btnSupprimer.innerHTML = "Supprimer le client";
     btnSupprimer.classList.add("btn", "btn-outline-danger");
+    btnSupprimer.type = "submit";
     btnSupprimer.id = "btn-suppr";
 
     // ajout des nouveaux boutons
     divBoutons.appendChild(btnValider);
     divBoutons.appendChild(btnAnnuler);
     divBoutons.appendChild(btnSupprimer);
-
-    // création formulaire
-    let formulaire = document.createElement("form");
-    formulaire.method = "post";
-    formulaire.action = "ClientModifSt";
-    formulaire.id = "formulaire";
-
-   // TODO créer/trouver div où append le form
-    document.body.appendChild(formulaire);
-
 }
 
 // TODO ajouter un événement sur le bouton "supprimer"
 let btnSupprimer = document.getElementById("btn-suppr");
 let formulaire = document.getElementById("formulaire");
 
+// TODO ajouter client id + form (erreur : Cannot parse null string > voir client vue principale + clientModifSt)
 btnSupprimer.addEventListener("click", function () {
-
-    // TODO ajouter client id + form (erreur : Cannot parse null string > voir client vue principale + clientModifSt)
+let clientId = document.getElementById("client_id").value;
 
     formulaire.submit();
 })

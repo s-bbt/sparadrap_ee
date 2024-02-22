@@ -20,13 +20,15 @@ public class ClientModifSt extends HttpServlet {
         this.clientDAO = new ClientDAO();
     }
 
-//    TODO méthode suppression client + ajouter pop up : suppression effectuée ou non
+//    TODO ajouter pop up : suppression effectuée ou non
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         int client_id = Integer.parseInt(request.getParameter("client_id"));
         Client client = clientDAO.find(client_id);
         request.setAttribute("client", client);
-        clientDAO.delete(client);
-        this.getServletContext().getRequestDispatcher("/ClientAccueilSt").forward(request, response);
+        if (client!=null) {
+            clientDAO.delete(client);
+        }
+        this.getServletContext().getRequestDispatcher("/ClientRechercheSt").forward(request, response);
     }
 
 }
