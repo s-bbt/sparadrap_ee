@@ -12,7 +12,6 @@ btnModifier.addEventListener("click", function () {
 });
 
 // fonction qui rend le champ modifiable
-// TODO ajouter id aux input
 function modifierChamp(champ) {
     let input = document.createElement('input');
     input.value = champ.innerHTML;
