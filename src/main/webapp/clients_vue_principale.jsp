@@ -5,7 +5,7 @@ page principale CLIENTS
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@include file="header.jsp" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
-<link href="ressources/css/client_vue_principale.css">
+<link href="ressources/css/alert.css">
 
 <html>
 <head>

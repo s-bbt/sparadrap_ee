@@ -18,7 +18,7 @@ public abstract class DAO<T> {
     public abstract T find(int param);
     // retourne les objets recherchés
 
-    public abstract boolean update (T obj);
+    public abstract void update (T obj);
     // modifier un objet
 
     public abstract void delete (T obj);

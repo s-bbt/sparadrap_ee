@@ -20,7 +20,6 @@ public class ClientModifSt extends HttpServlet {
         this.clientDAO = new ClientDAO();
     }
 
-//    TODO ajouter pop up : suppression effectuée ou non
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         int client_id = Integer.parseInt(request.getParameter("client_id"));
         Client client = clientDAO.find(client_id);
