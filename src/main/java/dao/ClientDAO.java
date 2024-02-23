@@ -91,10 +91,14 @@ public class ClientDAO extends DAO<Client> {
     @Override
     public void update(Client obj) {
         StringBuilder requeteClient = new StringBuilder();
-        requeteClient.append("DELETE FROM CLIENT ");
+        requeteClient.append("UPDATE client ");
+        requeteClient.append("SET client_nom = ?, ");
+        requeteClient.append("client_prenom = ? " );
         requeteClient.append("WHERE CLIENT_ID = ? ;");
         try (PreparedStatement ps = this.connect.prepareStatement(requeteClient.toString())) {
-            ps.setInt(1, obj.getClient_id());
+            ps.setString(1, obj.getClient_nom());
+            ps.setString(2, obj.getClient_prenom());
+            ps.setInt(3, obj.getClient_id());
             ps.executeUpdate();
         } catch (SQLException sqlE) {
             System.out.println("Relation with DB error : " + sqlE.getMessage() + "SQL error code : " + sqlE.getSQLState());
@@ -104,9 +108,7 @@ public class ClientDAO extends DAO<Client> {
     @Override
     public void delete(Client obj) {
         StringBuilder requeteClient = new StringBuilder();
-        requeteClient.append("UPDATE client ");
-        requeteClient.append("SET client_nom = '?', ");
-        requeteClient.append("client_prenom = '?'" );
+        requeteClient.append("DELETE FROM CLIENT ");
         requeteClient.append("WHERE CLIENT_ID = ? ;");
         try (PreparedStatement ps = this.connect.prepareStatement(requeteClient.toString())) {
             ps.setInt(1, obj.getClient_id());

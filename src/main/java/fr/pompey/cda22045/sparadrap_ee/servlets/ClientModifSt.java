@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet (name = "ClientModifSt", value = "/ClientModifSt")
+@WebServlet(name = "ClientModifSt", value = "/ClientModifSt")
 public class ClientModifSt extends HttpServlet {
 
     private ClientDAO clientDAO;
@@ -22,13 +22,28 @@ public class ClientModifSt extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         int client_id = Integer.parseInt(request.getParameter("client_id"));
-        Client client = clientDAO.find(client_id);
-        request.setAttribute("client", client);
-        if (client!=null) {
-            clientDAO.delete(client);
+        String idBouton = request.getParameter("bouton");
+        String client_nom = request.getParameter("nom");
+        String client_prenom = request.getParameter("prenom");
+
+        if (idBouton.equals("btn-suppr")) {
+            Client client = clientDAO.find(client_id);
+            request.setAttribute("client", client);
+            if (client != null) {
+                clientDAO.delete(client);
+            }
+            request.setAttribute("message", "Suppression effectuée");
+            this.getServletContext().getRequestDispatcher("/ClientRechercheSt").forward(request, response);
+
+        } else if (idBouton.equals("btn-valider")) {
+            Client client = clientDAO.find(client_id);
+            request.setAttribute("client", client);
+            if (client != null) {
+                clientDAO.update(client);
+            }
+            request.setAttribute("message", "Modification effectuée");
+            this.getServletContext().getRequestDispatcher("/ClientDetailsSt").forward(request, response);
         }
-        request.setAttribute("message", "Suppression effectuée");
-        this.getServletContext().getRequestDispatcher("/ClientRechercheSt").forward(request, response);
     }
 
 }
